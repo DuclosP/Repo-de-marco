@@ -1,0 +1,24 @@
+.header{
+    .main-nav{
+        width: 200px;
+        @include flex($justify:space-between);
+        button{
+            color: #fff;
+            @include noButtonHere;
+        }
+        button:hover{
+            text-decoration: line-through ;
+        }
+        a:hover{
+            text-decoration: line-through;
+        }
+    }
+}
+@include tablet{
+    .header{
+        .main-nav{
+            width: 95%;
+        }
+    }
+
+}

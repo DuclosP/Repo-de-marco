@@ -1,0 +1,66 @@
+.project-main{
+    width: 100%;
+    height: 100vh;
+    @include flex();
+    @include tablet{
+        @include flex($direction:column);
+        height: 100%;
+        padding-top: 122px;
+    }
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 25%;
+        height: 100%;
+        @include tablet{
+            width: 100%;
+            height: 500px;
+        }
+
+        .link:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1;
+            transition: all ease-in-out 0.5s;
+            @include tablet{
+                opacity: 1;
+            }
+        }
+
+        .link:hover:before{
+            opacity: 1;
+        } 
+        .annabelle:before{
+            background: url(../img/annabelle.jpg) center/cover;
+        }
+        .decathlon:before{
+            background: url(../img/decathlon.png) center/cover;
+        }
+        .evento:before{
+            background: url(../img/eventoxtra-header.jpg) center/cover;
+        }
+        .flako:before{
+            background: url(../img/flako.jpg) center/cover;
+        }
+        a{
+            @include fontfamily($fontfamily : Arial, $size: 30px, $height : 20px, $weight : 700, $color: #fff);
+            text-decoration:none;
+            text-transform:capitalize;
+            small{
+                font-size: 14px;
+                text-transform: uppercase;
+            }
+        }
+    } 
+}
+
+
+

@@ -1,0 +1,98 @@
+//un wrapper
+@mixin wrapper($width) {
+  margin: 0 auto;
+  width: $width;
+}
+//faire disparaitre l'apparence d'un bouton
+@mixin noButtonHere{
+  background-color: transparent;
+  border: none;
+}
+//bouton
+@mixin btn($width, $height, $color, $bg-color, $td, $size, $bordersize, $borderstyle, $bordercolor, $radius:none) {
+  width: $width;
+  height: $height;
+  color: $color;
+  background-color: $bg-color;
+  text-decoration: $td;
+  font-size: $size;
+  border: $bordersize $borderstyle $bordercolor;
+  border-radius: $radius;
+}
+// flex
+@mixin flex($wrrap: nowrap, $direction: row,  $justify: flex-start, $alignitems:flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrrap;
+  justify-content: $justify;
+  align-items: $alignitems;
+}
+// font family
+@mixin fontfamily($fontfamily : Arial, $size: 16px, $height : 20px, $weight : 400, $color: black) {
+  font-family: $fontfamily;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  color: $color;
+}
+@mixin abs-position ($top, $right, $bottom, $left) {
+  position: absolute; 
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+//images project
+@mixin placement-image($bg-image){
+  position: absolute;
+  background: $bg-image;
+  top: 0;
+  z-index: -1;
+}
+// background
+@mixin background($size:cover, $pos:center,$attachement:scroll) {
+  background-size: $size;
+  background-position: $pos;
+  background-attachment: $attachement;
+}
+// Centrer les éléments
+@mixin rel-center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//after & before
+@mixin befter ($bg, $pos:absolute,  $width:100%, $height:100%) {
+  content: "";
+  position: $pos;
+  background: $bg ;
+  width: $width;
+  height: $height;
+  top:0;
+  left: 0;
+}
+
+// responsive
+$tablet: 990px;
+$large: 1024px;
+$desktop: 1280px;
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+      @content;
+  }
+}
+
+@mixin large {
+  @media screen and (max-width: $large) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $desktop) {
+      @content;
+  }
+}

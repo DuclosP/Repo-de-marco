@@ -1,0 +1,6 @@
+.btn {
+    display: flex;
+    @include btn(140px, 60px,#fff,$couleurform, none, inherit, 1px, solid, #fff, none );
+    justify-content: center;
+    align-items: center;
+}

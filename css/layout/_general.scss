@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Circularpro book";
+    src: url("https://www.marcomarino.design/fonts/CircularPro-Book.otf") format("opentype");
+}
+.backsvg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/Mediamodifier-Design.svg) center/cover;
+    z-index: -1;
+}
+.blackscreen{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    animation: 1s ease-out 1 forwards slideout 0.2s;
+    @include tablet{
+        animation: none;
+        display: none;
+    }
+}
+@keyframes slideout {
+    from { transform: translateX(0); }
+    to   { transform: translateX(100%); }
+  }
+.header, .main, .footer {
+    width: 100%;
+}
+.wrapper {
+    @include wrapper(90%);
+}
+.flex-column {
+    height: 100vh;
+    @include flex($direction:column,$justify:space-between);
+}
+
+.formu {
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    transition: all ease-in-out 0.5s;
+}
+.afficher {
+    right: 0;
+    transition: all ease-in-out 0.5s;       
+}

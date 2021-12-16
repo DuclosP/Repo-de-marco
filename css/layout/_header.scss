@@ -1,0 +1,33 @@
+.header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    transform: translateY(-100%);
+    @include flex($justify:space-between);
+    z-index: 1;
+    a, button{
+        @include fontfamily(Circularpro book, 14px, 60px, 700, #fff);
+        text-decoration:none;
+        cursor: pointer;
+    }
+    animation: 0.5s linear forwards slidein 1s;
+    @keyframes slidein {
+        from { transform: translateY(-100%); }
+        to   { transform: translateY(0); }
+    }
+}
+@include tablet{
+    .header{
+        background-color: #2C2D2D;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        animation: none;
+        transform: translateY(0);
+        a, button {
+            font-size: 12px;
+            margin: 0 40px;
+        }
+    }
+    
+}

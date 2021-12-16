@@ -1,0 +1,48 @@
+.about-main{
+    @include wrapper(50%);
+    color: #fff;
+    overflow: hidden;
+    .about-img{
+        background: url(../img/IMG_0055-min.jpg) center/cover;
+        height: 600px;
+        border-radius: 4px;
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+    @include tablet{
+        @include wrapper(100%);
+        .about-img{
+            margin: 0;
+        }
+    }
+
+    .about-content{
+        @include flex;
+        div{
+            width: 50%;
+        }
+        p{
+            @include fontfamily($fontfamily : Circularpro book, $size: 14px, $height : 2, $weight : 400, $color: #fff);
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        .talk{
+            width: 100%;
+            @include flex($alignitems:center);
+            :first-child{
+                margin-right: 20px;
+            }
+            margin-bottom: 100px;
+        }
+        @include tablet{
+            flex-direction: column;
+            div{
+                width: 80%;
+                margin-left: 10px;
+            }      
+        }
+    
+    }
+}

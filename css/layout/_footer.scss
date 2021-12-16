@@ -1,0 +1,25 @@
+body{
+    position: relative;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    @include flex($justify:space-between);
+    a{
+        @include fontfamily("Circularpro book, sans-serif", 14px, 60px, 700, #999999);
+        text-decoration:none;
+    }
+    .footer-nav{
+        *{
+            padding-right: 40px;
+        }
+    }
+    p{
+        color:#5A5A58 ;
+    }
+    @include tablet{
+            display: none;
+        }
+    }

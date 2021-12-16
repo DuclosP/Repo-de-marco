@@ -1,0 +1,67 @@
+.formu{
+    z-index: 100;
+    background-color : $couleurform ;
+    height: 100%;
+    width: 600px;
+    padding: 0 40px;
+    @include flex($direction:column);
+
+    }
+    .formu-title{
+        width: 100%;
+        margin: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        h1{
+            color: #fff;
+            font-weight: 200;
+        }
+        button{
+            @include noButtonHere;
+            color: #fff;
+        }
+    }
+
+    form{
+        @include flex($wrrap:wrap, $justify:space-between, $alignitems:center);
+        input:nth-of-type(-n+3), textarea{
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color : lighten($couleurform, 20%);
+            border: none;
+            color: #fff;
+        }
+        input:nth-of-type(-n+2){
+            width: 49%;
+        }
+        input:nth-of-type(3){
+            width: 100%;
+        }
+        textarea{
+            width: 100%;
+            height: 200px;
+            resize: vertical;
+        }
+        a{
+            width: 70%;
+            color: #fff;
+            text-decoration: underline;
+            font-size: 14px;
+            padding-left: 40px
+        }
+        #send{
+            @include btn(140px, 60px,#fff,$couleurform, none, inherit, 1px, solid, #fff, none );      
+        }
+    }
+@include tablet{
+    .formu{
+        width: 100%;
+        height: 100%;
+        form{
+            #send{
+                width: 110px;
+                height: 50px;
+           }
+        }
+    }
+}

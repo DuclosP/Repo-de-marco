@@ -1,0 +1,43 @@
+.home-main {
+    color: #fff;
+    height: 100vh;
+    overflow: hidden;
+    .home-txt{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: translateY(100%);
+        animation: 1.5s linear forwards botToCenter 2s;
+        @keyframes botToCenter {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(0);}
+        }
+        @include tablet{
+            animation: none;
+            transform: translateY(0);
+            padding-top: 122px;
+        }
+    }
+    h1{
+        @include fontfamily($fontfamily:Circularpro book,$size:140px, $color:inherit, $weight:700, $height:0.8);
+        @include wrapper(80%);
+        @include tablet {
+            @include fontfamily($fontfamily:Circularpro book,$size:80px, $color:inherit, $weight:700, $height:0.8)
+        }
+    }
+    p{
+        font-style: italic;
+        line-height: 8;
+        @include wrapper(80%)
+    }
+    a{
+        color: inherit;
+        text-decoration: none;
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
